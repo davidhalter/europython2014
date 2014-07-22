@@ -1,0 +1,69 @@
+- Jedi image
+- Quick survey: Hands up! 1min
+    - Who knows Jedi?
+    - Who is using it?
+
+- CV - Who am I? 2min
+    - Have been working on it for the last two years (almost fulltime)
+
+- introduction 1 minute
+    - How did I come up with Jedi?
+    - Why this talk?
+        - Jedi is technically quite sophisticated
+        - Advertisment, for contributors
+    - Jedi Facts
+
+------ Introduction 4-5min -------
+
+- Jedi core features (how does Jedi work!) ~ 11min
+    - Jedi does auto completion and gotos
+    - Lazy evaluation
+    - Evaluation is value based, not a type graph (like PyCharm).
+    - fault-tolerant parser
+    - fast parser
+        - The japanese are awesome early adopters
+        - Guido anecdote?
+
+    - dynamic stuff
+        - Not handled by other IDEs: PyCharm, PyDev, Rope
+        - array manipulations
+        - getattr/__getattribute__
+    - understands decorators/generators/list comprehensions and almost
+      everything else except setattr/metaclasses. We even understand some
+      sys.path manipulations.
+
+
+- linter (9min)
+    - Realized that static analysis would be easy with Jedi.
+    - Python sucks:
+        - It's slow - solutions include PyPy, Cython, Numba and others.
+        - Not a statically typed language -> Design constraint, but why is it an issue?
+            From stackoverflow http://stackoverflow.com/questions/125367/dynamic-type-languages-versus-static-type-languages:
+            - Earlier detection of programming mistakes (e.g. preventing adding an integer to a boolean)
+            - Better documentation in the form of type signatures (e.g. incorporating number and types of arguments when resolving names)
+            - Performance
+    - Jedi's static analysis could potentially fix this
+        - By being a similar kind of compiler.
+    - Basically runs gotos 
+    - If you can deduct types very well in autocompletion, why wouldn't you use
+          it for a linter.
+    - code samples
+
+------ Main 20min -------
+
+- The future ~ 5-6min
+    - Checking builtin types better/Numpy support, by Sebastian Kreft
+        - He modified the Python runtime and logs input/output types, of which
+          we create a database
+    - An improved linter -> better autocompletion.
+    - Refactoring
+    - Adoption in mainstream IDE's - Spyder & PyDev
+    - My future within the project:
+        - Worked fulltime for 14 months + breaks, financially unsustainable.
+        - If you're a company and you want to hire me to create a really good
+          linter for Python, I'm available :-)
+    - Alternative: More Japanese Contributors :-)
+    - (You should write/improve/fork libraries if they don't exist.)
+    - If you want to help, please contact me.
+
+------ Finish 5-6min -------
